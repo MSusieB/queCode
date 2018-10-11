@@ -30,9 +30,24 @@
     class SayHello extends React.Component {
       constructor (props){
         super(props)
+				this.state = {
+					colors: ['red', 'white', 'blue']
+				}
       }
       render (){
-        return <span>Hi, {this.props.name}. Keep it up!</span>
+
+				const colors = this.state.colors.map((item, index) => {
+					return <li key={index}>{item}</li>
+				})
+
+        return (
+					<div>
+						<h1>Hi, {this.props.name}. Keep it up!</h1>
+						<ul>
+							{colors}
+						</ul>
+					</div>
+					)
       }
     }
 
