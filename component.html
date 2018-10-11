@@ -2,65 +2,66 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>React - Chapter 2</title>
-	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <meta charset="utf-8">
+    <title>React - Chapter 2</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
-	<style>
-		#container {
-		padding: 50px;
-		background-color: #eee;
-	}
-	
-	#container h1{
-		font-size:144px;
-		font-family: sans-serif;
-		color: #0080a8;
-	}
-	</style>
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #eee;
+        }
+
+        #container h1 {
+            font-size: 144px;
+            font-family: sans-serif;
+            color: #0080a8;
+        }
+    </style>
 
 </head>
 
 <body>
-	<div id="container"></div>
-	<script type="text/babel">
-		var destination = document.querySelector("#container");
-		
+<div id="container"></div>
+<script type="text/babel">
+    var destination = document.querySelector("#container");
+
     class SayHello extends React.Component {
-      constructor (props){
-        super(props)
-				this.state = {
-					colors: ['red', 'white', 'blue']
-				}
-      }
-      render (){
+        constructor(props) {
+            super(props)
+            this.state = {
+                colors: ['red', 'white', 'blue']
+            }
+        }
 
-				const colors = this.state.colors.map((item, index) => {
-					return <li key={index}>{item}</li>
-				})
+        render() {
 
-        return (
-					<div>
-						<h1>Hi, {this.props.name}. Keep it up!</h1>
-						<ul>
-							{colors}
-						</ul>
-					</div>
-					)
-      }
+            const colors = this.state.colors.map((item, index) => {
+                return <li key={index}>{item}</li>
+            })
+
+            return (
+                <div>
+                    <h1>Hi, {this.props.name}. Keep it up!</h1>
+                    <ul>
+                        {colors}
+                    </ul>
+                </div>
+            )
+        }
     }
 
 
-	ReactDOM.render(
-    <div>
-      <h1>Susie Back</h1>
-      <SayHello name="Susie"/>
-    </div>,
-		destination
-	);
-	</script>
+    ReactDOM.render(
+        <div>
+            <h1>Susie Back</h1>
+            <SayHello name="Susie"/>
+        </div>,
+        destination
+    );
+</script>
 </body>
 
 </html>
